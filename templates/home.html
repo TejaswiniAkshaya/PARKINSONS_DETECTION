@@ -1,0 +1,414 @@
+<html>
+  <head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: url("https://img.freepik.com/free-vector/low-poly-brain-design-with-connecting-dots_1048-5757.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: #186F65 !important;
+    }
+    
+    .formbold-relative {
+      position: relative;
+    }
+    .formbold-opacity-0 {
+      opacity: 0;
+    }
+    .formbold-stroke-current {
+      stroke: currentColor;
+    }
+    #supportCheckbox:checked ~ div span {
+      opacity: 1;
+    }
+  
+    .formbold-main-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px;
+  
+    }
+  
+    .formbold-form-wrapper {
+      margin: 0 auto;
+      max-width: 570px;
+      width: 100%;
+      background: white;
+      padding: 40px;
+      background: black;
+      text-align: center;
+      
+    }
+  
+  
+    .formbold-form-title {
+      margin-bottom: 30px;
+    }
+    .formbold-form-title h2 {
+      font-weight: 600;
+      font-size: 28px;
+      line-height: 34px;
+      color: #07074d;
+    }
+    .formbold-form-title p {
+      font-size: 16px;
+      line-height: 24px;
+      color: #536387;
+      margin-top: 12px;
+    }
+  
+    .formbold-input-flex {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 15px;
+    }
+    .formbold-input-flex > div {
+      width: 50%;
+    }
+    .formbold-form-input {
+      text-align: center;
+      width: 100%;
+      padding: 13px 22px;
+      border-radius: 5px;
+      border: 1px solid #005B41;
+      background: #186F65;
+      font-weight: 500;
+      font-size: 16px;
+      color:#fff;
+      outline: none;
+      resize: none;
+    }
+    .formbold-form-input:focus {
+      border-color: #fff;
+      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+    }
+    .formbold-form-label {
+      color:white;
+      font-size: 14px;
+      line-height: 24px;
+      display: block;
+      margin-bottom: 10px;
+    }
+  
+   
+    .formbold-btn {
+      font-size: 16px;
+      border-radius: 5px;
+      padding: 14px 25px;
+      border: none;
+      font-weight: 500;
+      background-color: #186F65;
+      color: white;
+      cursor: pointer;
+      margin-top: 25px;
+      text-align: center;
+    }
+    .formbold-btn:hover {
+      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+    }
+  </style>
+  </head>
+<body>
+
+
+
+<div class="formbold-main-wrapper">
+   
+    <div class="formbold-form-wrapper">
+   
+      <form  action="{{url_for('home')}}" method="post">
+        <div class="formbold-form-title">
+          <h1 class="heading">Parkinson's Disease Predictor</h2>
+         
+        </div>
+  
+        <div class="formbold-input-flex" style="width: 100%;">
+          <div>
+            <label for="name" class="formbold-form-label">
+              Name
+            </label>
+            <input
+            required
+              type="text"
+              name="name"
+              id="name"
+              class="formbold-form-input"
+            />
+          </div>
+          <div>
+            <label for="phone" class="formbold-form-label"> Phonenumber </label>
+            <input
+            required
+              type="phone"
+              name="phone"
+              id="phone"
+              class="formbold-form-input"
+            />
+          </div>
+          <div>
+            <label for="b" class="formbold-form-label">
+             MDVP:Fo(Hz)
+            </label>
+            <input
+            required
+              type="text"
+              name="b"
+              id="b"
+              class="formbold-form-input"
+            />
+          </div>
+        </div>
+  
+         <div class="formbold-input-flex">
+          
+          <div>
+            <label for="c" class="formbold-form-label">MDVP:Fhi(Hz) </label>
+            <input
+            required
+              type="text"
+              name="c"
+              id="c"
+              class="formbold-form-input"
+            />
+          </div>
+           <div>
+            <label for="d" class="formbold-form-label"> MDVP:Flo(Hz) </label>
+            <input required
+              type="text"
+              name="d"
+              id="d"
+              class="formbold-form-input"
+            />
+          </div>
+          <div>
+            <label for="e" class="formbold-form-label">
+             MDVP:Jitter(%)
+            </label>
+            <input required
+              type="text"
+              name="e"
+              id="e"
+              class="formbold-form-input"
+            />
+          </div>
+        </div>
+  
+  
+   <div class="formbold-input-flex">
+         
+          <div>
+            <label for="f" class="formbold-form-label"> MDVP:Jitter(Abs) </label>
+            <input required
+              type="text"
+              name="f"
+              id="f"
+              class="formbold-form-input"
+            />
+          </div>
+           <div>
+            <label for="g" class="formbold-form-label"> MDVP:RAP</label>
+            <input required
+              type="text"
+              name="g"
+              id="g"
+              class="formbold-form-input"
+            />
+          </div>
+          <div>
+            <label for="h" class="formbold-form-label">
+           MDVP:PPQ
+            </label>
+            <input required
+              type="text"
+              name="h"
+              id="h"
+              class="formbold-form-input"
+            />
+          </div>
+        </div>
+  
+   <div class="formbold-input-flex">
+         
+          <div>
+            <label for="i" class="formbold-form-label"> Jitter:DDP</label>
+            <input required
+              type="text"
+              name="i"
+              id="i"
+              class="formbold-form-input"
+            />
+          </div>
+           <div>
+            <label for="j" class="formbold-form-label"> MDVP:Shimmer </label>
+            <input required
+              type="text"
+              name="j"
+              id="j"
+              class="formbold-form-input"
+            />
+          </div>
+          <div>
+            <label for="k" class="formbold-form-label">
+              MDVP:Shimmer(dB)
+            </label>
+            <input required
+              type="text"
+              name="k"
+              id="k"
+              class="formbold-form-input"
+            />
+          </div>
+        </div>
+  
+   <div class="formbold-input-flex">
+          
+          <div>
+            <label for="l" class="formbold-form-label"> Shimmer:APQ3 </label>
+            <input required
+              type="text"
+              name="l"
+              id="l"
+              class="formbold-form-input"
+            />
+          </div>
+           <div>
+            <label for="m" class="formbold-form-label"> Shimmer:APQ5 </label>
+            <input required
+              type="text"
+              name="m"
+              id="m"
+              class="formbold-form-input"
+            />
+          </div>
+          <div>
+            <label for="n" class="formbold-form-label">
+              MDVP:APQ
+            </label>
+            <input required
+              type="text"
+              name="n"
+              id="n"
+              class="formbold-form-input"
+            />
+          </div>
+        </div>
+  
+   <div class="formbold-input-flex">
+         
+          <div>
+            <label for="o" class="formbold-form-label"> Shimmer:DDA </label>
+            <input required
+              type="text"
+              name="o"
+              id="o"
+              class="formbold-form-input"
+            />
+          </div>
+           <div>
+            <label for="p" class="formbold-form-label"> NHR </label>
+            <input required
+              type="text"
+              name="p"
+              id="p"
+              class="formbold-form-input"
+            />
+          </div>
+          <div>
+            <label for="q" class="formbold-form-label">
+             HNR
+            </label>
+            <input required
+              type="text"
+              name="q"
+              id="q"
+              class="formbold-form-input"
+            />
+          </div>
+        </div>
+  
+   <div class="formbold-input-flex">
+          
+          <div>
+            <label for="r" class="formbold-form-label"> RPDE </label>
+            <input required
+              type="text"
+              name="r"
+              id="r"
+              class="formbold-form-input"
+            />
+          </div>
+           <div>
+            <label for="s" class="formbold-form-label"> DFA</label>
+            <input required
+              type="text"
+              name="s"
+              id="s"
+              class="formbold-form-input"
+            />
+          </div>
+          <div>
+            <label for="t" class="formbold-form-label">
+              spread1
+            </label>
+            <input required
+              type="text"
+              name="t"
+              id="t"
+              class="formbold-form-input"
+            />
+          </div>
+        </div>
+  
+   <div class="formbold-input-flex">
+         
+          <div>
+            <label for="u" class="formbold-form-label"> spread2 </label>
+            <input required
+              type="text"
+              name="u"
+              id="u"
+              class="formbold-form-input"
+            />
+          </div>
+           <div>
+            <label for="v" class="formbold-form-label"> D2</label>
+            <input required
+              type="text"
+              name="v"
+              id="v"
+              class="formbold-form-input"
+            />
+          </div>
+          <div>
+            <label for="w" class="formbold-form-label">
+              PPE
+            </label>
+            <input  required 
+              type="text"
+              name="w"
+              id="w"
+              class="formbold-form-input"
+            />
+          </div>
+        
+        </div>
+  
+  
+  
+       
+  
+      
+        <button class="formbold-btn" >Predict</button>
+      </form>
+    </div>
+  </div>
+  </body>
+  
+  </html>

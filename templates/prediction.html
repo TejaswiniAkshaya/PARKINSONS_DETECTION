@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnostic Result</title>
+    <style>
+        body {
+            background-image: url('https://img.freepik.com/free-vector/emerald-background-design_23-2150304117.jpg'); /* Replace with your chosen brain-themed image URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .result-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #004225;
+        }
+
+        p {
+            color:black;
+            font-size: 20px;
+        }
+
+        button {
+            background-color:#004225;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 15px 30px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #004225;
+         
+        }
+        a{
+            text-decoration: none;
+            color: white;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h1 style="font-family: 'Arial', sans-serif;">Result</h1>
+        {% if data==2 %}
+        <p style="font-family: 'Arial', sans-serif;">You entered Invalid data</p>
+        {% elif data==0 %}
+        <p style="font-family: 'Arial', sans-serif;">{{name}} is healthy person</p>
+       {% else %}
+       <p style="font-family: 'Arial', sans-serif;">{{name}} is dignosed with parkinson's disease</p>
+       {% endif %}
+
+        <button ><a href="/" style="font-family: 'Arial', sans-serif;">Go Back to Home Page</a></button>
+    </div>
+
+   
+</body>
+</html>
